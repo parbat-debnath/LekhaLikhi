@@ -9,4 +9,34 @@ document.getElementById("postBtn").addEventListener('submit', async (e) => {
 
     const storyJSON = JSON.stringify({ title, author, content }, null, 2);
 
+    const apiurl = `https://api.github.com/repos/parbat-debnath/LekhaLikhi/stories/contents/${filename}`;
+
+    const encoded = btoa(encodeURIComponent(storyJSON));
+
+    const payload = {
+        message : `Add new story : ${title}`,
+        content: encoded
+    };
+
+    try {
+        const response = await fetch(apiurl, {
+            method: "PUT",
+            headers: {
+                "Authentication" : `token ${token}`,
+                "Content-type" : "application/json" 
+            },
+            body : JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if(response.ok) {
+            alert("Story uploaded successfully!")
+        } else {
+            throw new Error(data.message || "Upload failed");
+        }
+    } catch (err) {
+        alert(`Error : ${err.message}`)
+    }
+
 });
