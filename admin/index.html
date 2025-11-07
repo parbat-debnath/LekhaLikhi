@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#212121" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <nav>
+      <a href="../homepage/">Homepage</a>
+      <a href="../admin/" state="active">Admin</a>
+    </nav>
+    <form>
+      <input
+        type="text"
+        name="title"
+        id="contentTitle"
+        placeholder="Title"
+        required
+      />
+      <input
+        type="text"
+        name="author"
+        id="contentAuthor"
+        placeholder="Author"
+        required
+      />
+      <textarea
+        name="content"
+        id="content"
+        placeholder="Start writing"
+        rows="18"
+      ></textarea>
+      <input
+        type="text"
+        name="token"
+        id="token"
+        placeholder="Enter token"
+        required
+      />
+      <button type="submit" id="postBtn">POST</button>
+    </form>
+    <script src="../app.js"></script>
+  </body>
+</html>
