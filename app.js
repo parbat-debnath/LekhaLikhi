@@ -9,7 +9,7 @@ document.getElementById("postBtn").addEventListener('submit', async (e) => {
 
     const storyJSON = JSON.stringify({ title, author, content }, null, 2);
 
-    const apiurl = `https://api.github.com/repos/parbat-debnath/LekhaLikhi/stories/contents/${filename}`;
+    const apiurl = `https://api.github.com/repos/parbat-debnath/LekhaLikhi/contents/stories/${filename}`;
 
     const encoded = btoa(encodeURIComponent(storyJSON));
 
